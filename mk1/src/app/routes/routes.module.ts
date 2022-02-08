@@ -8,7 +8,7 @@ const routes: Routes = [
   {
     path: 'my',
     component: RouteMyComponent
-  }   
+  }
 ]
 @NgModule({
   declarations: [],
