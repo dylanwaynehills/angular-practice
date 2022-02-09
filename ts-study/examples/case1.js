@@ -8,23 +8,9 @@
   Tip) 한번에 여러 ts파일이 열린 탭을 켜두면 다른 파일이더라도 같은 스코프로 인식되서 sentence error가 발생한다
 
 */
-
-// interface란 타입스크립트에서 Type(유형)를 설정하는 부분이다
-interface User {
-  name: string;
-  id: number;
-  // interface값으로 문자열, 숫자를 넣을 경우 해당 값이 객체를 통해 받은 값과 일치해야함.
-  password: 'qwer';
-}
-
-// typescript const 오류 해결하기 위해서 빈 객체 export
-export {};
-
-const user: User = {
-  name: 'Dylan',
-  id: 0,
-  password: 'qwer'
+var user = {
+    name: 'Dylan',
+    id: 0,
+    password: 'qwer'
 };
-
-
-console.log(user)
+console.log(user);
