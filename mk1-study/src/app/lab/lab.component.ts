@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { List, list } from '../list';
+
 @Component({
   selector: 'app-lab',
   templateUrl: './lab.component.html',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LabComponent implements OnInit {
 
+  // test = 'test';
+  obj: List;
+
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }
