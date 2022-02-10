@@ -1,0 +1,16 @@
+$content: rgb(20, 20, 20);
+
+
+::ng-deep body {
+    margin: 0;
+    padding: 0;
+}
+
+::ng-deep body * {
+    margin: 0;
+}
+
+::ng-deep body a {
+    // text-decoration: none;
+    color: $content;
+}
