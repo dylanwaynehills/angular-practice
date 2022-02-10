@@ -1,31 +1,29 @@
 <div id="todo">
-
   <div class="todo-wrap">
     <div class="header-wrap">
       <div class="day">
-        <p class="day-name">
-          Thursday,
-        </p>
-        <p class="day-number">
-          10th
-        </p>
-      </div> 
-      <p class="month-name">
-        December
-      </p>
+        <p class="day-name">Thursday,</p>
+        <p class="day-number">10th</p>
+      </div>
+      <p class="month-name">December</p>
     </div>
     <div class="todo-list-wrap">
-
       <div *ngFor="let todo of todoList" class="todo-list">
         <div class="check-wrap">
-          <img *ngIf="todo.active" src="../../../assets/icon/i-checkbox-marked.png" class="checkbox">
-          <img #elseCase src="../../../assets/icon/i-checkbox-blank.png" class="checkbox">
+          <img
+            *ngIf="todo.active"
+            src="../../../assets/icon/i-checkbox-marked.png"
+            class="checkbox"
+          />
+          <img
+            #elseCase
+            src="../../../assets/icon/i-checkbox-blank.png"
+            class="checkbox"
+          />
         </div>
         <p class="content">{{ todo.content }}</p>
         <p class="time">{{ todo.time }}:00</p>
       </div>
-
     </div>
   </div>
-
 </div>

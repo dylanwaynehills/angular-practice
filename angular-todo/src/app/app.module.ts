@@ -8,21 +8,18 @@ import { RouterModule } from '@angular/router';
 import { RoutesModule } from './routes/routes.module';
 import { RouteTodoModule } from './routes/route-todo/route-todo.module';
 
-
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule,
-    // Route 
+    // Route
     RoutesModule,
     // Components
-    RouteTodoModule
+    RouteTodoModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

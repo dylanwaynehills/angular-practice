@@ -17,12 +17,10 @@ $base-padding: 15px 20px;
   // padding: 15px 20px;
 
   // border: 1px solid #adadad;
-  -webkit-box-shadow: 0 20px 70px rgba(0, 0, 0, 0.30);
-  -moz-box-shadow: 0 20px 70px rgba(0, 0, 0, 0.30);
-  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.30);
+  -webkit-box-shadow: 0 20px 70px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 20px 70px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.3);
 }
-
-
 
 // Header Wrap
 
@@ -54,8 +52,6 @@ $base-padding: 15px 20px;
   margin-top: 7px;
   color: $base-gray;
 }
-
-
 
 // Todo List Wrap
 

@@ -5,16 +5,12 @@ import { RouteTodoComponent } from './route-todo.component';
 // import { RouteTodoComponent } from './route-todo.component';
 
 @NgModule({
-  declarations: [
-    RouteTodoComponent,
-  ],
+  declarations: [RouteTodoComponent],
   imports: [
     CommonModule,
     RouterModule,
     // RouteTodoNavComponent
   ],
-  exports: [
-    RouteTodoComponent
-  ]
+  exports: [RouteTodoComponent],
 })
-export class RouteTodoModule { }
+export class RouteTodoModule {}
