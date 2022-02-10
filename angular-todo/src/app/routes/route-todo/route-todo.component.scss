@@ -1,5 +1,59 @@
 $base-color: #ececec;
+$base-padding: 15px 20px;
 
 #todo {
-    border: 1px solid $base-color;
+  // border: 1px solid $base-color;
+  padding-top: 120px;
+}
+
+#todo .todo-wrap {
+  max-width: 420px;
+  background-color: #fff;
+  border-radius: 7px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  // padding: 15px 20px;
+
+  // border: 1px solid #adadad;
+  -webkit-box-shadow: 0 20px 70px rgba(0, 0, 0, 0.30);
+  -moz-box-shadow: 0 20px 70px rgba(0, 0, 0, 0.30);
+  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.30);
+}
+
+
+
+// Header Wrap
+
+#todo .todo-wrap .header-wrap {
+  // border: 1px solid blue;
+  padding: $base-padding;
+}
+
+#todo .todo-wrap .header-wrap .day {
+  display: flex;
+  gap: 5px;
+}
+
+#todo .todo-wrap .header-wrap .day .day-name {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+#todo .todo-wrap .header-wrap .day .day-number {
+  font-size: 22px;
+  font-weight: 400;
+}
+
+#todo .todo-wrap .header-wrap .month-name {
+  margin-top: 7px;
+  color: #a5a6b6;
+}
+
+
+
+// Todo Wrap
+
+#todo .todo-wrap .todo-list {
+  padding: $base-padding;
+  border: 1px solid blue;
 }
