@@ -24,7 +24,12 @@
             />
           </ng-template>
         </div>
-        <p class="content">{{ todo.content }}</p>
+        <p
+          [ngClass]="{ 'content-marked': todo.active == true }"
+          class="content"
+        >
+          {{ todo.content }}
+        </p>
         <p class="time">
           {{ todo.time.hour }}
           :
@@ -36,6 +41,21 @@
         </p>
       </div>
     </div>
-    <div class="form-wrap">form</div>
+    <div class="form-wrap">
+      <input
+        [(ngModel)]="form.todo"
+        (keyup.enter)="submitTodo()"
+        type="text"
+        name="todo"
+        class="todo-form"
+        placeholder="Write what to do today"
+      />
+      <input
+        (click)="submitTodo()"
+        type="button"
+        value="작성"
+        class="btn-submit"
+      />
+    </div>
   </div>
 </div>

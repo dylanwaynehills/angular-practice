@@ -1,6 +1,6 @@
 export interface TodoList {
   active: boolean;
-  content: string;
+  content: string | null | Event;
   time: {
     hour: number;
     minutes: number | string;
