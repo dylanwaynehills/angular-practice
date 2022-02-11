@@ -22,7 +22,9 @@ $base-padding: 15px 20px;
   box-shadow: 0 20px 70px rgba(0, 0, 0, 0.3);
 }
 
-// Header Wrap
+/*
+* Header Wrap
+*/
 
 #todo .todo-wrap .header-wrap {
   // border: 1px solid blue;
@@ -53,7 +55,9 @@ $base-padding: 15px 20px;
   color: $base-gray;
 }
 
-// Todo List Wrap
+/*
+* Todo List Wrap
+*/
 
 #todo .todo-wrap .todo-list-wrap {
   // padding: $base-padding;
@@ -106,4 +110,11 @@ $base-padding: 15px 20px;
   align-items: center;
   justify-content: right;
   color: $base-gray;
+}
+
+/*
+* Form Wrap
+*/
+
+#todo .todo-wrap .form-wrap {
 }

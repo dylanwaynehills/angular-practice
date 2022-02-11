@@ -8,22 +8,34 @@
       <p class="month-name">December</p>
     </div>
     <div class="todo-list-wrap">
-      <div *ngFor="let todo of todoList" class="todo-list">
+      <div *ngFor="let todo of todoList; index as i" class="todo-list">
         <div class="check-wrap">
           <img
-            *ngIf="todo.active"
+            *ngIf="todo.active; else elseBlock"
+            (click)="toggleTodoActive(i)"
             src="../../../assets/icon/i-checkbox-marked.png"
             class="checkbox"
           />
-          <img
-            #elseCase
-            src="../../../assets/icon/i-checkbox-blank.png"
-            class="checkbox"
-          />
+          <ng-template #elseBlock>
+            <img
+              (click)="toggleTodoActive(i)"
+              src="../../../assets/icon/i-checkbox-blank.png"
+              class="checkbox"
+            />
+          </ng-template>
         </div>
         <p class="content">{{ todo.content }}</p>
-        <p class="time">{{ todo.time }}:00</p>
+        <p class="time">
+          {{ todo.time.hour }}
+          :
+          {{ todo.time.minutes }}
+          <!-- <ng-template *ngIf="todo.time.minutes == 0"
+            >{{ todo.time.minutes }} asdf</ng-template
+          > -->
+          <!-- <ng-template #elseBlock>{{ todo.time.minutes }}</ng-template> -->
+        </p>
       </div>
     </div>
+    <div class="form-wrap">form</div>
   </div>
 </div>
