@@ -12,19 +12,28 @@ interface Form {
   styleUrls: ['./route-todo.component.scss'],
 })
 export class RouteTodoComponent implements OnInit {
-  // 배열 안에 들어오는 값(Object)의 구조가 TodoList 인터페이스의 타입을 따라야 함
+  // todo 프로퍼티
   public todoList: TodoList[] = todoList;
   public form: Form = {
     todo: '',
   };
   public formDisabled: boolean = false;
 
+  // observable 프로퍼티
+  public dateTime: any;
+  public timeNowObserver: any;
+
   constructor(private readonly apiService: ApiService) {}
 
-  // void란 any의 반대타입으로 어떤 타입도 존재할 수 없음을 나타낸다. 보통 함수에서 반환값이 없을때 사용한다
   ngOnInit(): void {
-    const results = this.apiService.getTimeObserve();
-    console.log(results.subscribe(result => console.log(result)));
+    this.timeNowObserver = this.apiService.getTimeObserve();
+    this.timeNowObserver.subscribe((state: Object) => {
+      this.dateTime = state;
+    });
+
+    console.log('datetime: ' + this.dateTime);
+
+    // let results = this.timeNowObserver.subscribe(x => console.log(x));
   }
 
   toggleTodoActive<T extends number>(index: T): void {
