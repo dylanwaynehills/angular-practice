@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-// import { FormsModule } from '@angular/forms';
-// import { TestBed } from '@angular/core/testing';
 import { TodoList, todoList } from '../../todoList';
+import { ApiService } from 'src/app/api.service';
 
 interface Form {
   todo: Event | string | null;
@@ -20,10 +19,12 @@ export class RouteTodoComponent implements OnInit {
   };
   public formDisabled: boolean = false;
 
-  constructor() {}
+  constructor(private readonly apiService: ApiService) {}
 
   // void란 any의 반대타입으로 어떤 타입도 존재할 수 없음을 나타낸다. 보통 함수에서 반환값이 없을때 사용한다
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.apiService.consoleTest();
+  }
 
   toggleTodoActive<T extends number>(index: T): void {
     this.todoList[index].active = !this.todoList[index].active;
