@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { RouteTodoComponent } from './route-todo.component';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 // import { RouteTodoComponent } from './route-todo.component';
 
 @NgModule({
@@ -11,6 +12,7 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     RouterModule,
     FormsModule,
+    ReactiveFormsModule,
     // RouteTodoNavComponent
   ],
   exports: [RouteTodoComponent],

@@ -143,12 +143,19 @@ $base-padding: 15px 20px;
 
 #todo .todo-wrap .form-wrap input.todo-form:focus {
   outline: none !important;
-  // box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
   box-shadow: 0 5px 12px #babeda;
 }
 
 #todo .todo-wrap .form-wrap input.todo-form::placeholder {
   color: #9fa2b6;
+}
+
+#todo .todo-wrap .form-wrap input.todo-form:disabled {
+  background-color: #d1d2da;
+}
+
+#todo .todo-wrap .form-wrap input.todo-form:disabled::placeholder {
+  color: #bdbec7;
 }
 
 #todo .todo-wrap .form-wrap input.btn-submit {
