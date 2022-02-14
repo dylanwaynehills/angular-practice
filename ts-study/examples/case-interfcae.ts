@@ -14,17 +14,36 @@ interface User {
   name: string;
   id: number;
   // interface값으로 문자열, 숫자를 넣을 경우 해당 값이 객체를 통해 받은 값과 일치해야함.
-  password: 'qwer';
+  password: "qwer";
 }
 
 // typescript const 오류 해결하기 위해서 빈 객체 export
 export {};
 
 const user: User = {
-  name: 'Dylan',
+  name: "Dylan",
   id: 0,
-  password: 'qwer'
+  password: "qwer",
 };
 
+console.log(user);
 
-console.log(user)
+// Interface 2
+
+interface User {
+  name: string;
+  id: number;
+}
+
+class UserAccount {
+  name: string;
+  id: number;
+
+  constructor(name: string, id: number) {
+    this.name = name;
+    this.id = id;
+  }
+}
+
+const user2: User = new UserAccount("Murphy", 1);
+console.log(user2);
