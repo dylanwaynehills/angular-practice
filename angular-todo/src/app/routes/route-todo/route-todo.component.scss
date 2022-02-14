@@ -1,10 +1,9 @@
-$base-color: #ececec;
-$base-gray: #a9abc2;
+@use '../../styles/palette.scss' as palette;
 $base-border: 1px solid rgb(233, 236, 252);
 $base-padding: 15px 20px;
 
 #todo {
-  // border: 1px solid $base-color;
+  // border: 1px solid palette.$base-color;
   padding-top: 120px;
   padding-bottom: 50px;
 }
@@ -53,7 +52,7 @@ $base-padding: 15px 20px;
 
 #todo .todo-wrap .header-wrap .month-name {
   margin-top: 7px;
-  color: $base-gray;
+  color: palette.$base-gray;
 }
 
 /*
@@ -103,7 +102,7 @@ $base-padding: 15px 20px;
 
 #todo .todo-wrap .todo-list-wrap .todo-list .content-marked {
   text-decoration-line: line-through;
-  color: $base-gray;
+  color: palette.$base-gray;
 }
 
 #todo .todo-wrap .todo-list-wrap .todo-list .time {
@@ -116,7 +115,7 @@ $base-padding: 15px 20px;
   display: flex;
   align-items: center;
   justify-content: right;
-  color: $base-gray;
+  color: palette.$base-gray;
 }
 
 /*
