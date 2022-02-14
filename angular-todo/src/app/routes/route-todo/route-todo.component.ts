@@ -23,14 +23,15 @@ export class RouteTodoComponent implements OnInit {
 
   // void란 any의 반대타입으로 어떤 타입도 존재할 수 없음을 나타낸다. 보통 함수에서 반환값이 없을때 사용한다
   ngOnInit(): void {
-    this.apiService.consoleTest();
+    const results = this.apiService.getTimeObserve();
+    console.log(results.subscribe(result => console.log(result)));
   }
 
   toggleTodoActive<T extends number>(index: T): void {
     this.todoList[index].active = !this.todoList[index].active;
     // console.log(this.todoList[index]);
 
-    // disable form
+    // Disable form
     let activeList = this.todoList.map(item => item.active);
     let activeListLength = Array.from(new Set(activeList));
     // activeListLength = activeListLength.length;
@@ -45,7 +46,7 @@ export class RouteTodoComponent implements OnInit {
   submitTodo(): void {
     console.log(this.form.todo);
 
-    // add todo
+    // Add todo
     if (this.form.todo != '') {
       this.todoList.push({
         active: false,

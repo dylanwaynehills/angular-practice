@@ -15,7 +15,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) {}
 
-  public requestTtvApiIssueAccessToken(): Observable<any> {
+  public getTimeObserve(): Observable<any> {
     return this.http.get<any>(this.getTimeUrl);
   }
 
