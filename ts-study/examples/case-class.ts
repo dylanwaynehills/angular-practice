@@ -1,3 +1,7 @@
+/**
+ * 클래스는 기본적으로 프로퍼티(greeting), 생성자(constrctor), 메서드(greet)으로 이루어져 있다
+ */
+
 class Greeter {
   greeting: string;
   constructor(message: string) {
@@ -84,11 +88,13 @@ class AnimalPrivate {
     this.name = animalName;
   }
 }
+let animalName = new AnimalPrivate("Cat");
 // name프로퍼티는 private이기때문에 외부에서 접근이 불가능함
-let animalName = new AnimalPrivate("Cat").name;
+console.log(animalName.name);
 
 /**
  * Protected
+ * public과는 다르게 선언한 클래스 안에서만 접근 가능하다
  */
 
 class Person {
@@ -164,7 +170,7 @@ if (employee.fullName) {
 /**
  * 전역 프로퍼티(static)
  *
- * 인스턴스(constructor)가 아닌 클레스 전체에서 접근 가능한 전역변수
+ * 인스턴스(constructor)가 아닌 클래스 전체에서 접근 가능한 전역변수
  */
 
 class Grid {
