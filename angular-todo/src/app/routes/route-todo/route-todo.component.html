@@ -2,10 +2,10 @@
   <div class="todo-wrap">
     <div class="header-wrap">
       <div class="day">
-        <p class="day-name">Thursday,</p>
-        <p class="day-number">10th</p>
+        <p class="day-name">{{ dayNow }}</p>
+        <p class="day-number">{{ dateNow }}th</p>
       </div>
-      <p class="month-name">December</p>
+      <p class="month-name">February</p>
     </div>
     <div class="todo-list-wrap">
       <div *ngFor="let todo of todoList; index as i" class="todo-list">

@@ -15,7 +15,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) {}
 
-  public getTimeObserve(): Observable<any> {
+  public getTimeObserve(): Observable<Object> {
     return this.http.get<any>(this.getTimeUrl);
   }
 

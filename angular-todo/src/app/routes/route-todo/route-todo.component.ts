@@ -18,20 +18,39 @@ export class RouteTodoComponent implements OnInit {
     todo: '',
   };
   formDisabled: boolean = false;
-  // datetime
+  // dayNow
   getTimeObserver: any;
-  datetime: any;
+  dayNow: any;
+  dateNow: any;
 
   constructor(private readonly apiService: ApiService) {}
 
   ngOnInit(): void {
     this.getTimeObserver = this.apiService.getTimeObserve();
     this.getTimeObserver.subscribe((state: Object) => {
-      this.datetime = state;
-      console.log(this.datetime);
+      let datetime: any = state;
+
+      // dayNow
+      let dateOrder = datetime.day_of_week;
+      let dayOfWeek: string[] = [
+        'Monday',
+        'Tuseday',
+        'Wednessday',
+        'Thursday',
+        'Friday',
+        'Saturday',
+        'Sundy',
+      ];
+      this.dayNow = dayOfWeek[dateOrder - 1];
+
+      // dateNow
+      this.dateNow = datetime.datetime.toString().split('T')[0].split('-')[2];
+
+      console.log(this.dayNow);
+      console.log(this.dateNow);
+      console.log(datetime);
     });
-    // subscribe 스코프를 벗어난곳에서 datetime프로퍼티에 접근하려 하면 undefined가 반환된다
-    console.log(this.datetime);
+    // subscribe 스코프를 밖에서 datetime에 접근하려 하면 undefined가 반환된다
   }
 
   toggleTodoActive<T extends number>(index: T): void {
@@ -40,9 +59,7 @@ export class RouteTodoComponent implements OnInit {
 
   submitTodo(): void {
     console.log(this.form.todo);
-    /**
-     * Add todo
-     */
+    // Add todo
     if (this.form.todo != '') {
       this.todoList.push({
         active: false,
@@ -59,6 +76,6 @@ export class RouteTodoComponent implements OnInit {
   }
 
   getTimeEx() {
-    console.log(this.datetime);
+    console.log(this.dayNow);
   }
 }
