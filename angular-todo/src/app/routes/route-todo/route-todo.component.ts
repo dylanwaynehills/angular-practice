@@ -12,50 +12,37 @@ interface Form {
   styleUrls: ['./route-todo.component.scss'],
 })
 export class RouteTodoComponent implements OnInit {
-  // todo 프로퍼티
-  public todoList: TodoList[] = todoList;
-  public form: Form = {
+  // todo
+  todoList: TodoList[] = todoList;
+  form: Form = {
     todo: '',
   };
-  public formDisabled: boolean = false;
-
-  // observable 프로퍼티
-  public dateTime: any;
-  public timeNowObserver: any;
+  formDisabled: boolean = false;
+  // datetime
+  getTimeObserver: any;
+  datetime: any;
 
   constructor(private readonly apiService: ApiService) {}
 
   ngOnInit(): void {
-    this.timeNowObserver = this.apiService.getTimeObserve();
-    this.timeNowObserver.subscribe((state: Object) => {
-      this.dateTime = state;
+    this.getTimeObserver = this.apiService.getTimeObserve();
+    this.getTimeObserver.subscribe((state: Object) => {
+      this.datetime = state;
+      console.log(this.datetime);
     });
-
-    console.log('datetime: ' + this.dateTime);
-
-    // let results = this.timeNowObserver.subscribe(x => console.log(x));
+    // subscribe 스코프를 벗어난곳에서 datetime프로퍼티에 접근하려 하면 undefined가 반환된다
+    console.log(this.datetime);
   }
 
   toggleTodoActive<T extends number>(index: T): void {
     this.todoList[index].active = !this.todoList[index].active;
-    // console.log(this.todoList[index]);
-
-    // Disable form
-    let activeList = this.todoList.map(item => item.active);
-    let activeListLength = Array.from(new Set(activeList));
-    // activeListLength = activeListLength.length;
-    console.log(activeListLength, activeListLength.length);
-    if (activeListLength.length < 2 && activeListLength[0] == true) {
-      this.formDisabled = true;
-    } else {
-      this.formDisabled = false;
-    }
   }
 
   submitTodo(): void {
     console.log(this.form.todo);
-
-    // Add todo
+    /**
+     * Add todo
+     */
     if (this.form.todo != '') {
       this.todoList.push({
         active: false,
@@ -67,7 +54,11 @@ export class RouteTodoComponent implements OnInit {
       });
       this.form.todo = '';
     } else {
-      alert('할일을 먼저 작성해주세요');
+      // alert('할일을 먼저 작성해주세요');
     }
+  }
+
+  getTimeEx() {
+    console.log(this.datetime);
   }
 }
