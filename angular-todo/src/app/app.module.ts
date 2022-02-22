@@ -11,9 +11,10 @@ import {
 import { AppComponent } from './app.component';
 import { RoutesModule } from './routes/routes.module';
 import { RouteTodoModule } from './routes/route-todo/route-todo.module';
+import { RouteIntroComponent } from './route-intro/route-intro.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, RouteIntroComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
